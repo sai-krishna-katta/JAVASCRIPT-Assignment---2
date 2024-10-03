@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="1" style="margin-left: 40px;">Items List</h2>
+    <input type="text " id="iteminput" placeholder="Enter items">
+    <button id="but">Add</button>
+    <ul id="itemlist"></ul>
+    <script>
+      let Element1 = document.getElementById("iteminput");
+      let Element2 = document.getElementById("but");
+      let Element3 = document.getElementById("itemlist");
+      Element2.addEventListener('click',function() {
+        if (Element1.value.trim() !== ''){
+            let newItem = document.createElement("li")
+            newItem.textContent = Element1.value;
+            Element3.appendChild(newItem)
+            iteminput.value = ""
+            //remove
+            let removeButton = document.createElement("button");
+            removeButton.textContent = "Remove";
+            removeButton.style.marginLeft = "20px"; 
+            removeButton.addEventListener('click', function() {
+            Element3.removeChild(newItem);
+            }); 
+            newItem.appendChild(removeButton);
+            
+            
+        }
+      });
+    </script>
+</body>
+</html>
